@@ -9,7 +9,7 @@
     background-color: var(--couleurTitres);;
 }
 .piece {
-    --largeurPiece:calc(var(--totalLargeur)/3);
+    --largeurPiece:calc(var(--totalLargeur)/var(--nbrPiecesPerLine));
     width:var(--largeurPiece);
     height: calc(var(--largeurPiece)*var(--ratioImage));
     background: var(--image-taquin);
