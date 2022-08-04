@@ -1,4 +1,4 @@
-const nbrPiecesPerLine=getComputedStyle(document.documentElement).getPropertyValue('--nbrPiecesPerLine');
+const nbrPiecesPerLine=Number(getComputedStyle(document.documentElement).getPropertyValue('--nbrPiecesPerLine'));
 function taquin() {
     let ratioImage=getComputedStyle(document.documentElement).getPropertyValue('--ratioImage');
     var largeurPiece=getComputedStyle(document.documentElement).getPropertyValue('--largeurPiece');
@@ -53,7 +53,7 @@ function joue(evt) {
         endOfGame();
    };
 };
-function pieceCliquable(pieceInvisible, pieceAtester, largueurTaquin = 3) {
+function pieceCliquable(pieceInvisible, pieceAtester, largueurTaquin =nbrPiecesPerLine) {
     pieceInvisible = Number(pieceInvisible);
     pieceAtester = Number(pieceAtester);
     //Cliquable est définit comme true quand l'ordre de la piece testée est égale à l'ordre de la pièce invisible,-1 ou +1 ou -4 ou +4 sauf quand le reste de la division de l'orde de la piece invisible par la largeur du taquin est égal à 1 ou à 0
