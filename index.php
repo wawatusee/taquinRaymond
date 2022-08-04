@@ -31,6 +31,7 @@ $urlImage=$dirImages.$nomImage;
    <style>:root{--image-taquin:url('<?php echo "../".$urlImage ?>');
                 --totalLargeur:<?php echo $sizeTaquin?>;
                 --ratioImage:<?php echo $ratioImage ?>;
+                --nombrePiecesLigne:3;
             }
     </style>
 </head>
@@ -48,14 +49,7 @@ $urlImage=$dirImages.$nomImage;
                 <div class="piece"></div>             
                 <div class="piece"></div>             
                 <div class="piece"></div>             
-                <div class="piece"></div>             
-                <div class="piece"></div>             
-                <div class="piece"></div>             
-                <div class="piece"></div>             
-                <div class="piece"></div>             
-                <div class="piece"></div>             
-                <div class="piece"></div>             
-                <div class="piece"></div>             
+                <div class="piece"></div>                                             
                 <div id="pieceInvisible" class="piece"></div>
             </div>
         </section>

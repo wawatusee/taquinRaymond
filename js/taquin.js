@@ -7,15 +7,16 @@ function taquin() {
     /*Get his style :*/
     stylePieceInvisible = getComputedStyle(pieceInvisible);
     /*Create an Array of an playable order of pieces */
-    var shuffleArray=[9,11,2,14,15,1,3,8,16,7,4,12,5,13,6,10];
+    var shuffleArray=[ 2, 6, 5, 8, 3, 9, 4, 7, 1 ];
     /*Loop on taquin's pieces*/
     for (var i = 0; i < lesPieces.length; i++) {
-        let largeurPiece=100;
+        let largeurPiece=133;
         let hauteurPiece=largeurPiece*ratioImage;
         var chaquePiece = lesPieces[i];
         /*Background image position for each piece*/
-        chaquePiece.style.backgroundPositionX=`${-(i%4)*largeurPiece}px`;
-        chaquePiece.style.backgroundPositionY=`${-Math.floor(i/4)*hauteurPiece}px`;
+        chaquePiece.style.backgroundPositionX=`${-(i%3)*largeurPiece}px`;
+        console.log(chaquePiece.style.backgroundPositionX);
+        chaquePiece.style.backgroundPositionY=`${-Math.floor(i/3)*hauteurPiece}px`;
         /*Background is ok for each piece */
         chaquePiece.style.order =shuffleArray[i];
         /*Listenner on each piece */
@@ -40,7 +41,7 @@ function joue(evt) {
         endOfGame();
    };
 };
-function pieceCliquable(pieceInvisible, pieceAtester, largueurTaquin = 4) {
+function pieceCliquable(pieceInvisible, pieceAtester, largueurTaquin = 3) {
     pieceInvisible = Number(pieceInvisible);
     pieceAtester = Number(pieceAtester);
     //Cliquable est définit comme true quand l'ordre de la piece testée est égale à l'ordre de la pièce invisible,-1 ou +1 ou -4 ou +4 sauf quand le reste de la division de l'orde de la piece invisible par la largeur du taquin est égal à 1 ou à 0
@@ -78,7 +79,7 @@ function testIssue(){
         if(sonStyle.order==i+1){
             nbrPiecesOrdonnees+=1;
         }
-        if(nbrPiecesOrdonnees>14){
+        if(nbrPiecesOrdonnees>7){
             return true;
         }
     }   
