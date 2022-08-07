@@ -6,7 +6,7 @@ $jsonImageTaquin=json_decode(file_get_contents("js/image-taquin.json"));
 //Récupération du nom de l'image source
 $nomImage=$jsonImageTaquin->image_taquin;
 $urlImage=$dirImages.$nomImage;
-$nbrPiecesPerLine=4;
+$nbrPiecesPerLine=3;
 //Division de la taille du taquin par le nombre de pièces dans une ligne
 $largeurPiece=round($sizeTaquin/$nbrPiecesPerLine);
 ?>
