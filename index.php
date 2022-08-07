@@ -39,23 +39,13 @@ $largeurPiece=round($sizeTaquin/$nbrPiecesPerLine);
             }
     </style>
 </head>
-<body onload="taquin()">
+<body>
     <div class="c1">
         <header>
             <h1><?php echo $titrePage ?><a href="admin.php" target="_self" rel="noopener noreferrer"><img src="css/images/engrenages.png" alt="Gestion taquin"></a></h1>
         </header>
         <section id="scene">
-            <div class="taquin">      
-                <div class="piece"></div>             
-                <div class="piece"></div>             
-                <div class="piece"></div>             
-                <div class="piece"></div>             
-                <div class="piece"></div>
-                <div class="piece"></div>             
-                <div class="piece"></div>             
-                <div class="piece"></div>                                               
-                <div id="pieceInvisible" class="piece"></div>
-            </div>
+
         </section>
         <footer>
             <section id="planDeSite">

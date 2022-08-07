@@ -1,4 +1,22 @@
-const nbrPiecesPerLine=Number(getComputedStyle(document.documentElement).getPropertyValue('--nbrPiecesPerLine'));
+document.body.onload = setBoard(9)
+var nbrPiecesPerLine
+function setBoard(numberOfPieces){
+    nbrPiecesPerLine=Number(getComputedStyle(document.documentElement).getPropertyValue('--nbrPiecesPerLine'));
+    let scene=document.getElementById("scene")
+    let board=document.createElement("div")
+    board.classList.add("taquin")
+    for (let i=1;i<numberOfPieces+1;i++){
+        let piece=document.createElement("div");
+        piece.classList.add("piece")
+		piece.innerHTML=i
+        board.appendChild(piece)
+    }
+    scene.appendChild(board)
+    pieceInvisible=board.lastChild
+    pieceInvisible.id="pieceInvisible"
+    //console.log(scene)
+    taquin();
+}
 function taquin() {
     let ratioImage=getComputedStyle(document.documentElement).getPropertyValue('--ratioImage');
     var largeurPiece=getComputedStyle(document.documentElement).getPropertyValue('--largeurPiece');
@@ -26,6 +44,7 @@ function taquin() {
     };
 };
 function getShuffleArray(){
+    //let nbrPiecesPerLine=Number(getComputedStyle(document.documentElement).getPropertyValue('--nbrPiecesPerLine'));
     let goodShuffleArray
 if(nbrPiecesPerLine==3){
     goodShuffleArray=[ 2, 6, 5, 8, 3, 9, 4, 7, 1 ]
