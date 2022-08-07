@@ -6,7 +6,8 @@ Valeurs à insérer:
  Pour chacune de ces valeurs une interface devra être créer dans le tableau de bord pour pouvoir modifier cette valeur
  */
 $dirImages="images/";
-$sizeTaquin="400px";
-$largeurMiniature="200px";
+//Cette valeur sera convertie en pixels
+$sizeTaquin=400;
+$largeurMiniature="200";
 $titrePage="Taquin de Raymond";
 ?>

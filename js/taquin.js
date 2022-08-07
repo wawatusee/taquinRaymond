@@ -1,5 +1,8 @@
+const nbrPiecesPerLine=Number(getComputedStyle(document.documentElement).getPropertyValue('--nbrPiecesPerLine'));
 function taquin() {
     let ratioImage=getComputedStyle(document.documentElement).getPropertyValue('--ratioImage');
+    var largeurPiece=getComputedStyle(document.documentElement).getPropertyValue('--largeurPiece');
+    console.log("largeur piece :"+ largeurPiece)
     /*Sélection de toutes les div identifiées pièces, dans un tableau "lesPieces", on range leurs réfèrences*/
     var lesPieces = document.getElementsByClassName("piece");
     /*Find the invisible piece:*/
@@ -7,21 +10,31 @@ function taquin() {
     /*Get his style :*/
     stylePieceInvisible = getComputedStyle(pieceInvisible);
     /*Create an Array of an playable order of pieces */
-    var shuffleArray=[9,11,2,14,15,1,3,8,16,7,4,12,5,13,6,10];
+    var shuffleArray=getShuffleArray();
     /*Loop on taquin's pieces*/
     for (var i = 0; i < lesPieces.length; i++) {
-        let largeurPiece=100;
         let hauteurPiece=largeurPiece*ratioImage;
         var chaquePiece = lesPieces[i];
         /*Background image position for each piece*/
-        chaquePiece.style.backgroundPositionX=`${-(i%4)*largeurPiece}px`;
-        chaquePiece.style.backgroundPositionY=`${-Math.floor(i/4)*hauteurPiece}px`;
+        chaquePiece.style.backgroundPositionX=`${-(i%nbrPiecesPerLine)*largeurPiece}px`;
+        console.log(chaquePiece.style.backgroundPositionX);
+        chaquePiece.style.backgroundPositionY=`${-Math.floor(i/nbrPiecesPerLine)*hauteurPiece}px`;
         /*Background is ok for each piece */
         chaquePiece.style.order =shuffleArray[i];
         /*Listenner on each piece */
         chaquePiece.addEventListener("click", joue);
     };
 };
+function getShuffleArray(){
+    let goodShuffleArray
+if(nbrPiecesPerLine==3){
+    goodShuffleArray=[ 2, 6, 5, 8, 3, 9, 4, 7, 1 ]
+}else if(nbrPiecesPerLine==4){
+     goodShuffleArray=[9,11,2,14,15,1,3,8,16,7,4,12,5,13,6,10];
+}
+return goodShuffleArray;
+}
+
 function joue(evt) {
     //Get the style of the clicked piece
     var sonStyle = getComputedStyle(evt.target);
@@ -40,7 +53,7 @@ function joue(evt) {
         endOfGame();
    };
 };
-function pieceCliquable(pieceInvisible, pieceAtester, largueurTaquin = 4) {
+function pieceCliquable(pieceInvisible, pieceAtester, largueurTaquin =nbrPiecesPerLine) {
     pieceInvisible = Number(pieceInvisible);
     pieceAtester = Number(pieceAtester);
     //Cliquable est définit comme true quand l'ordre de la piece testée est égale à l'ordre de la pièce invisible,-1 ou +1 ou -4 ou +4 sauf quand le reste de la division de l'orde de la piece invisible par la largeur du taquin est égal à 1 ou à 0
@@ -65,6 +78,7 @@ function aGetPiecesOrder() {
         var sonOrdre=Number(sonStyle.order);
         orderArray.push(sonOrdre);
     };
+    console.log(orderArray)
     return orderArray
 };
 
@@ -78,7 +92,7 @@ function testIssue(){
         if(sonStyle.order==i+1){
             nbrPiecesOrdonnees+=1;
         }
-        if(nbrPiecesOrdonnees>14){
+        if(nbrPiecesOrdonnees>(nbrPiecesPerLine*nbrPiecesPerLine)-2){
             return true;
         }
     }   

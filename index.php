@@ -6,6 +6,9 @@ $jsonImageTaquin=json_decode(file_get_contents("js/image-taquin.json"));
 //Récupération du nom de l'image source
 $nomImage=$jsonImageTaquin->image_taquin;
 $urlImage=$dirImages.$nomImage;
+$nbrPiecesPerLine=3;
+//Division de la taille du taquin par le nombre de pièces dans une ligne
+$largeurPiece=round($sizeTaquin/$nbrPiecesPerLine);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,8 +32,10 @@ $urlImage=$dirImages.$nomImage;
     <!--Déclaration de la variable qui sera employée pour l'arrière plan de chaque pièce. Attention au slash ajouté avant le nom du dossier-->
    <!--Utilisé pour le style de class piece dans taquin.css pour le background--> 
    <style>:root{--image-taquin:url('<?php echo "../".$urlImage ?>');
-                --totalLargeur:<?php echo $sizeTaquin?>;
+                --totalLargeur:<?php echo $sizeTaquin.'px'?>;
                 --ratioImage:<?php echo $ratioImage ?>;
+                --largeurPiece:<?php echo $largeurPiece ?>;
+                --nbrPiecesPerLine:<?php echo $nbrPiecesPerLine?>
             }
     </style>
 </head>
@@ -40,22 +45,15 @@ $urlImage=$dirImages.$nomImage;
             <h1><?php echo $titrePage ?><a href="admin.php" target="_self" rel="noopener noreferrer"><img src="css/images/engrenages.png" alt="Gestion taquin"></a></h1>
         </header>
         <section id="scene">
-            <div class="taquin">
+            <div class="taquin">      
+                <div class="piece"></div>             
+                <div class="piece"></div>             
+                <div class="piece"></div>             
+                <div class="piece"></div>             
                 <div class="piece"></div>
-                <div class="piece"></div>
-                <div class="piece"></div>       
                 <div class="piece"></div>             
                 <div class="piece"></div>             
-                <div class="piece"></div>             
-                <div class="piece"></div>             
-                <div class="piece"></div>             
-                <div class="piece"></div>             
-                <div class="piece"></div>             
-                <div class="piece"></div>             
-                <div class="piece"></div>             
-                <div class="piece"></div>             
-                <div class="piece"></div>             
-                <div class="piece"></div>             
+                <div class="piece"></div>                                               
                 <div id="pieceInvisible" class="piece"></div>
             </div>
         </section>
