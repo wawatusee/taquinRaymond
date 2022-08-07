@@ -1,7 +1,8 @@
-document.body.onload = setBoard(9)
+document.body.onload = setBoard()
 var nbrPiecesPerLine
-function setBoard(numberOfPieces){
+function setBoard(){
     nbrPiecesPerLine=Number(getComputedStyle(document.documentElement).getPropertyValue('--nbrPiecesPerLine'));
+    let numberOfPieces=nbrPiecesPerLine*nbrPiecesPerLine
     let scene=document.getElementById("scene")
     let board=document.createElement("div")
     board.classList.add("taquin")
@@ -44,7 +45,6 @@ function taquin() {
     };
 };
 function getShuffleArray(){
-    //let nbrPiecesPerLine=Number(getComputedStyle(document.documentElement).getPropertyValue('--nbrPiecesPerLine'));
     let goodShuffleArray
 if(nbrPiecesPerLine==3){
     goodShuffleArray=[ 2, 6, 5, 8, 3, 9, 4, 7, 1 ]

@@ -15,7 +15,8 @@ Gallery with small crud with html css js json for the data files
    - less corner for each piece of the taquin
    - Change the background to grey
    - change the number of pieces 
- - make a taquin with only 9 pieces
+   - make a taquin with only 9 pieces
+  - build the taquin in JS instead of hard html
 ## To do
 
 For Raymond
@@ -26,7 +27,7 @@ For Raymond
  
  - rule errors: admin,on upload, rule imagesize error; if the default image(json)doesn't exist; if an image extension is jpeg and not jpg.
  - modify the name of a thumb and the big image linked to it
- - build the taquin in JS instead of hard html
+
 
  ## Parameters image taquin and explain
  The aspect of each piece come from the backround image of his div, the url of that imagage come from a file json("image-taquin.json") with the property "image_taquin";
