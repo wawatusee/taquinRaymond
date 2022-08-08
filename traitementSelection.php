@@ -17,7 +17,6 @@ if (isset($_GET["fileName"])){
 <?php
 //Modification fichier enregistré
 if(isset($_POST['newFileSelected'])){
-    /////TODO//////Remplacer dans le json la valeur de image_taquin, sauvegarder dans js/image-taquin.json
     //Remplacer dans le json la valeur de image_taquin
     $jsonImageTaquin->image_taquin=$newFileSelected;
     //sauvegarder dans js/image-taquin.json
@@ -70,25 +69,5 @@ if(isset($_POST['newFileSelected'])){
             </fieldset>
         </form>
     </article>
-    <fieldset><legend>README</legend>
-        <p>Interface crud
-            <H2>Done :</H2>
-            <ul><li>Design perfect</li>
-                <li>Charger Json</li>
-                <li>Récupération objet en cours</li>
-                <li>Cibler clé valeur nom fichier</li>
-                <li>GET réception objet sélectionné</li>
-                <li>Affichage de l'objet en cours et du nouvel objet sélectionné</li>
-                <li>Construire formulaire</li>
-                <li>Traitement conditionnel du formulaire</li>
-                <li>Modifier clé valeur</li>
-                <li>Updater json en ligne</li>
-            </ul> , 
-            <h2>ToDo :</h2>
-            <ul>
-                <li>Création de TESTS pour chaque action</li>
-            </ul>
-        </p>
-    </fieldset>
 </body>
 </html>

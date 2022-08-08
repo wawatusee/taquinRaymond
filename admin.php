@@ -119,9 +119,11 @@ function getExtension( $fileTested){
                                     <input type="radio" id="<?php  echo $imageName?>" class="selectaButton" name="defaultTaquin" value="<?php  echo $file ?>"<?php echo $imageName===$nameSelected? "checked>":">"?>
                                 </form>
             <!--DELETE thumbail button-->
+                    <?php if($imageName!=$nameSelected): ?>
                             <form action="delete.php" method="post">
                                 <button type="submit" name="chooseToDelete" value="<?php  echo $file ?>"><img src="css/images/deleteButton.png" alt=""></button>
                             </form>
+                    <?php endif;?>
                         </div>
                     </figure>
                     <?php
@@ -132,23 +134,6 @@ function getExtension( $fileTested){
 <!--GALLERY with Button radio Form for each_end-->
             </section>
     </article>
-    <fieldset>
-        <legend>README</legend>
-        <p>Transform in CRUD
-            <ul>Done :
-                <li>Design perfect</li>
-                <li> uploader file</li>
-                <li>select file</li>
-                <li>delete file</li>
-            </ul>
-            <ul>ToDo :
-                <li>rename file</li>
-                <li>Factoriser le traitement et filtre des images, utilisé en ouverture de script et dans la boucle qui met en place le comportement.</li>
-                <li>Création de test pour chaque action</li>
-                <li>Rooter PHP pour comportement delete and select. </li>
-            </ul>
-        </p>
-    </fieldset>
     <script type="text/javascript" src="js/gallery.js"></script>
 </body>
 </html>
