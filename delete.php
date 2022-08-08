@@ -17,9 +17,6 @@ function destroyImages($fileName){
     unlink("images/".$fileName);
     $supprOk=true;
 }
-function viewImage(){
-
-}
 ?>
 <html lang="en">
 <head>
@@ -55,21 +52,7 @@ function viewImage(){
             </fieldset>
         </form>
         <?php endif;?>
-
     </article>
-    <fieldset><legend>README</legend>
-        <p>Interface delete
-            <H2>Done :</H2>
-            <ul>
-                <li>passer fichier à détruire via post</li>
-            </ul> , 
-            <h2>ToDo :</h2>
-            <ul>
-                <li>Design</li>
-                <li>Création de TESTS avant delete</li>
-            </ul>
-        </p>
-    </fieldset>
 </body>
 </html>
 

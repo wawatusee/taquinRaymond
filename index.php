@@ -6,7 +6,7 @@ $jsonImageTaquin=json_decode(file_get_contents("js/image-taquin.json"));
 //Récupération du nom de l'image source
 $nomImage=$jsonImageTaquin->image_taquin;
 $urlImage=$dirImages.$nomImage;
-$nbrPiecesPerLine=3;
+$nbrPiecesPerLine=$jsonImageTaquin->nbrPiecesPerLine;
 //Division de la taille du taquin par le nombre de pièces dans une ligne
 $largeurPiece=round($sizeTaquin/$nbrPiecesPerLine);
 ?>
@@ -45,13 +45,13 @@ $largeurPiece=round($sizeTaquin/$nbrPiecesPerLine);
             <h1><?php echo $titrePage ?><a href="admin.php" target="_self" rel="noopener noreferrer"><img src="css/images/engrenages.png" alt="Gestion taquin"></a></h1>
         </header>
         <section id="scene">
-
+            <!--Don't panic the Taquin will be created with Java Script-->
         </section>
         <footer>
             <section id="planDeSite">
-                <div class="debug">
+                <div class="help">
                      <fieldset>
-                        <legend>Debug</legend>
+                        <legend>Help</legend>
                         <button><a href="images/<?php echo $nomImage; ?>" rel="zoombox[galerie]">?</a></button>
                         <button id="numeroButton"><a  href="#" onclick=displayPiecesNumber();>1</a></button>
                      </fieldset>

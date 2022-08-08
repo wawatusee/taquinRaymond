@@ -88,10 +88,10 @@ footer {
     display: flex;
     justify-content: space-around;
 }
-.debug{
+.help{
     color: var(--couleurTitres);
 }
-.debug a{
+.help a{
     text-decoration:none ;
 }
 #numeroButton a{

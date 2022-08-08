@@ -51,6 +51,10 @@ if(nbrPiecesPerLine==3){
 }else if(nbrPiecesPerLine==4){
      goodShuffleArray=[9,11,2,14,15,1,3,8,16,7,4,12,5,13,6,10];
 }
+else if(nbrPiecesPerLine==5){
+    console.log("Nombre de pieces par ligne 5")
+    goodShuffleArray=[2,4,3,9,5,1,6,18,12,10,7,21,13,19,15,16,17,11,14,20,22,25,23,24,8];
+}
 return goodShuffleArray;
 }
 
