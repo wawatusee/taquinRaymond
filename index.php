@@ -6,7 +6,15 @@ $jsonImageTaquin=json_decode(file_get_contents("js/image-taquin.json"));
 //Récupération du nom de l'image source
 $nomImage=$jsonImageTaquin->image_taquin;
 $urlImage=$dirImages.$nomImage;
-$nbrPiecesPerLine=$jsonImageTaquin->nbrPiecesPerLine;
+//Si GET contient le nombre de pieces, c'est cette valeur qui prime, sinon on se fie au fichier json
+if (isset($_GET["nbrPieces"])){
+    $nbrPiecesPerLine=sqrt($_GET["nbrPieces"]);
+}else{
+    $nbrPiecesPerLine=$jsonImageTaquin->nbrPiecesPerLine;
+}
+
+
+
 //Division de la taille du taquin par le nombre de pièces dans une ligne
 $largeurPiece=round($sizeTaquin/$nbrPiecesPerLine);
 ?>
@@ -54,6 +62,15 @@ $largeurPiece=round($sizeTaquin/$nbrPiecesPerLine);
                         <legend>Help</legend>
                         <button><a href="images/<?php echo $nomImage; ?>" rel="zoombox[galerie]">?</a></button>
                         <button id="numeroButton"><a  href="#" onclick=displayPiecesNumber();>1</a></button>
+                        <form action="" method="get" id="nbrPieces">
+                            <select form="nbrPieces" name="nbrPieces" id="nuber-select" onchange="this.form.submit()">
+                                <option value="9">9</option>
+                                <option value="9">9</option>
+                                <option value=16>16</option>
+                                <option value=25>25</option>
+                            </select>
+                            
+                        </form>
                      </fieldset>
                 </div>
             </section>
