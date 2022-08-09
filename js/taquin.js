@@ -9,7 +9,6 @@ function setBoard(){
     for (let i=1;i<numberOfPieces+1;i++){
         let piece=document.createElement("div");
         piece.classList.add("piece")
-		piece.innerHTML=i
         board.appendChild(piece)
     }
     scene.appendChild(board)

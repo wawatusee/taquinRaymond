@@ -63,9 +63,9 @@ $largeurPiece=round($sizeTaquin/$nbrPiecesPerLine);
                         <button><a href="images/<?php echo $nomImage; ?>" rel="zoombox[galerie]">?</a></button>
                         <button id="numeroButton"><a  href="#" onclick=displayPiecesNumber();>1</a></button>
                         <form action="" method="get" id="nbrPieces">
-                            <select form="nbrPieces" name="nbrPieces" id="nuber-select" onchange="this.form.submit()">
-                                <option value="9">9</option>
-                                <option value="9">9</option>
+                            <select form="nbrPieces" name="nbrPieces" onchange="this.form.submit()">
+                                <option >n</option>
+                                <option value=9>9</option>
                                 <option value=16>16</option>
                                 <option value=25>25</option>
                             </select>
