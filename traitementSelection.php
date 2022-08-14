@@ -41,10 +41,10 @@ if(isset($_POST['newFileSelected'])){
 </head>
 <body>
 <header>
-    <h1>Page administration</h1><a href="index.php" target="_self" rel="noopener noreferrer">Taquin</a>
+    <h1><a href="index.php" target="_self" rel="noopener noreferrer">Taquin</a></h1>
     </header>
     <article>
-        <h2>Modification image</h2>
+        <h2>Administration-Modification image</h2>
         <section class="gallery">
             <figure class="min">
                 <img src="images/min/<?php echo $newFileSelected; ?>"/>

@@ -11,8 +11,7 @@ $largeurImageTaquin=400;
 $jsonImageTaquin=json_decode(file_get_contents("js/image-taquin.json"));
 //Récupération du nom de l'image source
 if(!isset($jsonImageTaquin)){
-    $selectedImage="_mg_4586.jpg";
-    echo "Par défaut : mg_4586.jpg";
+    $selectedImage="default-taquin-image.jpg";
 }else {
     $selectedImage=$jsonImageTaquin->image_taquin;
 }
@@ -72,10 +71,10 @@ function getExtension( $fileTested){
 </head>
 <body>
     <header>
-        <h1>Réglages</h1><a href="index.php" target="_self" rel="noopener noreferrer">Taquin</a>
+        <h1><a href="index.php" target="_self" rel="noopener noreferrer">Taquin</a></h1>
     </header>
     <article>
-        <h2>Images taquin</h2>
+        <h2>Images taquin-Réglages</h2>
         <section>
             <?php
             if(isset($erreur)){
@@ -119,7 +118,7 @@ function getExtension( $fileTested){
                                     <input type="radio" id="<?php  echo $imageName?>" class="selectaButton" name="defaultTaquin" value="<?php  echo $file ?>"<?php echo $imageName===$nameSelected? "checked>":">"?>
                                 </form>
             <!--DELETE thumbail button-->
-                    <?php if($imageName!=$nameSelected): ?>
+                    <?php if($imageName!=$nameSelected&&$imageName!="default-taquin-image"): ?>
                             <form action="delete.php" method="post">
                                 <button type="submit" name="chooseToDelete" value="<?php  echo $file ?>"><img src="css/images/deleteButton.png" alt=""></button>
                             </form>

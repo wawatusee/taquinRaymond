@@ -28,10 +28,10 @@ function destroyImages($fileName){
 </head>
 <body>
 <header>
-    <h1>Page administration</h1><a href="index.php" target="_self" rel="noopener noreferrer">Retour Page publique</a>
+    <h1><a href="index.php" target="_self" rel="noopener noreferrer">Taquin</a></h1>
     </header>
     <article>
-        <h2>Supprimer fichier</h2>
+        <h2>Administration-Supprimer fichier</h2>
         <?php if(!$supprOk): ?>
         <section class="gallery">
             <figure class="min">
