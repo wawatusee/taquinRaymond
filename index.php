@@ -50,7 +50,7 @@ $largeurPiece=round($sizeTaquin/$nbrPiecesPerLine);
 <body>
     <div class="c1">
         <header>
-            <h1><?php echo $titrePage ?><a href="admin.php" target="_self" rel="noopener noreferrer"><img src="css/images/engrenages.png" alt="Gestion taquin"></a></h1>
+            <h1><?php echo $titrePage ?><a href="admin/admin.php" target="_self" rel="noopener noreferrer"><img src="css/images/engrenages.png" alt="Gestion taquin"></a></h1>
         </header>
         <section id="scene">
             <!--Don't panic the Taquin will be created with Java Script-->
