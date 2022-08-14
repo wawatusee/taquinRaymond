@@ -9,6 +9,10 @@ h1{
     text-align: center;
     background-color: black;
 }
+H1>a{
+    font-size: 2em;
+    color:rgb(236, 165, 193)
+}
 h2{
     font-size: 1.7143em; /* equiv 24px */
     background-color: rgb(87, 82, 78);

@@ -1,3 +1,15 @@
+
+<?php 
+session_start();
+if(!isset($_SESSION['user'])){
+    header("location: login.php");	exit();
+}
+
+if(isset($_GET['logout'])){
+    unset($_SESSION['user']);
+    header("location: login.php");	exit();
+}
+?>
 <?php
 //Prendre dans config.php le chemin des miniatures
 require "../config.php";
@@ -71,7 +83,7 @@ function getExtension( $fileTested){
 </head>
 <body>
     <header>
-        <h1><a href="../index.php" target="_self" rel="noopener noreferrer">Taquin</a></h1>
+        <h1><a href="../index.php" target="_self" rel="noopener noreferrer">Taquin</a> But before :<a href="?logout">Log out</a>	</h1>
     </header>
     <article>
         <h2>Images taquin-Réglages</h2>
