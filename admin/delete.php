@@ -7,8 +7,6 @@ if(isset($_POST["chooseToDelete"])){
     var_dump($_POST["chooseToDelete"]);
 }elseif(isset($_POST["fileToDelete"])){
     $fileToDelete=$_POST["fileToDelete"];
-    echo "Fichier à détruire :";
-    var_dump($fileToDelete);
     destroyImages($fileToDelete, $url);
     $supprOk=true;
 }
