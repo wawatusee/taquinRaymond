@@ -2,7 +2,6 @@
 //Prendre dans config.php le chemin des miniatures
 require "../config.php";
 $dos="../".$dirImages;
-echo $dos."default-taquin-image.jpg";
 $dir=opendir($dos."/min/");//Ouvrir le répertoire des miniatures
 $largeurMiniature=200;
 $largeurImageTaquin=400;
@@ -106,8 +105,8 @@ function getExtension( $fileTested){
     <!--THUMBAIL-->
                     <figure class="min">
         <!--OPEN zoombox on click thumbail -->
-                        <a href="images/<?php echo $file; ?>" rel="zoombox[galerie]">
-                            <img src="../images/min/<?php echo $file; ?>"/>
+                        <a href="<?php echo $dos.$file; ?>" rel="zoombox[galerie]">
+                            <img src="<?php echo $dos."min/".$file; ?>"/>
                         </a>
         <!--Image vignette--->                  
                         <div class="titleFigcaption">
