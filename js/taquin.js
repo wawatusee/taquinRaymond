@@ -1,4 +1,22 @@
-const nbrPiecesPerLine=Number(getComputedStyle(document.documentElement).getPropertyValue('--nbrPiecesPerLine'));
+document.body.onload = setBoard()
+var nbrPiecesPerLine
+function setBoard(){
+    nbrPiecesPerLine=Number(getComputedStyle(document.documentElement).getPropertyValue('--nbrPiecesPerLine'));
+    let numberOfPieces=nbrPiecesPerLine*nbrPiecesPerLine
+    let scene=document.getElementById("scene")
+    let board=document.createElement("div")
+    board.classList.add("taquin")
+    for (let i=1;i<numberOfPieces+1;i++){
+        let piece=document.createElement("div");
+        piece.classList.add("piece")
+        board.appendChild(piece)
+    }
+    scene.appendChild(board)
+    pieceInvisible=board.lastChild
+    pieceInvisible.id="pieceInvisible"
+    //console.log(scene)
+    taquin();
+}
 function taquin() {
     let ratioImage=getComputedStyle(document.documentElement).getPropertyValue('--ratioImage');
     var largeurPiece=getComputedStyle(document.documentElement).getPropertyValue('--largeurPiece');
@@ -31,6 +49,11 @@ if(nbrPiecesPerLine==3){
     goodShuffleArray=[ 2, 6, 5, 8, 3, 9, 4, 7, 1 ]
 }else if(nbrPiecesPerLine==4){
      goodShuffleArray=[9,11,2,14,15,1,3,8,16,7,4,12,5,13,6,10];
+}
+else if(nbrPiecesPerLine==5){
+    console.log("Nombre de pieces par ligne 5")
+    goodShuffleArray=[
+        8,15,23,9,5,6,16,19,7,4,1,21,18,11,20,17,3,13,10,12,22,25,24,2,14];
 }
 return goodShuffleArray;
 }
