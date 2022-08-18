@@ -14,7 +14,6 @@ if (isset($_GET["nbrPieces"])){
 }
 
 
-
 //Division de la taille du taquin par le nombre de pièces dans une ligne
 $largeurPiece=round($sizeTaquin/$nbrPiecesPerLine);
 ?>
@@ -50,7 +49,7 @@ $largeurPiece=round($sizeTaquin/$nbrPiecesPerLine);
 <body>
     <div class="c1">
         <header>
-            <h1><?php echo $titrePage ?><a href="admin.php" target="_self" rel="noopener noreferrer"><img src="css/images/engrenages.png" alt="Gestion taquin"></a></h1>
+            <h1><?php echo $titrePage ?><a href="admin/admin.php" target="_self" rel="noopener noreferrer"><img src="css/images/engrenages.png" alt="Gestion taquin"></a></h1>
         </header>
         <section id="scene">
             <!--Don't panic the Taquin will be created with Java Script-->
@@ -62,12 +61,17 @@ $largeurPiece=round($sizeTaquin/$nbrPiecesPerLine);
                         <legend>Help</legend>
                         <button><a href="images/<?php echo $nomImage; ?>" rel="zoombox[galerie]">?</a></button>
                         <button id="numeroButton"><a  href="#" onclick=displayPiecesNumber();>1</a></button>
+                        <!--Creation of a selector of number of pieces-->
                         <form action="" method="get" id="nbrPieces">
                             <select form="nbrPieces" name="nbrPieces" onchange="this.form.submit()">
-                                <option >n</option>
-                                <option value=9>9</option>
-                                <option value=16>16</option>
-                                <option value=25>25</option>
+                                <?php $nbrPiecesTaquin=$nbrPiecesPerLine*$nbrPiecesPerLine;
+                                $optionsNbrPieces=[9,16,25];
+                                ?>
+                                <?php foreach($optionsNbrPieces as $option){
+                                    if($option==$nbrPiecesTaquin){
+                                    echo "<option selected value=".$option.">".$option."</option>";    
+                                    }else echo "<option value=".$option.">".$option."</option>";
+                                }?>
                             </select>
                             
                         </form>
