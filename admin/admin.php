@@ -54,7 +54,14 @@ $nameSelected=substr($selectedImage,0,-4);
  //Création de la miniature et de l'image au format taquin avec les méthodes de la classe imgClass
         move_uploaded_file($img['tmp_name'],$dos."/".$img['name']);//Bouger l'image dans le répertoire prévu avec son nom initial
         Img::creerMin($dos.$img['name'],$dos."/"."/min",$img['name'],$largeurMiniature,$hauteurMiniature);//Avec une méthode de la classe image de Grafikart créer une miniature stoquée dans le répertoire désiré 
+        //CA CEST PAS SUFFISANT à la miniature aussi doit être un gif Kieran
+        if($incoming_format=="gif"){
+            echo "C'est un gif";
+            move_uploaded_file($dos.$img['name'], $dos."/".$img['name']);
+        }
+        else{
         Img::creerMin($dos.$img['name'],$dos."/",$img['name'],$largeurImageTaquin,$hauteurImageTaquin);//Avec une méthode de la classe image de Grafikart créer une l'image du taquin stoquée dans le répertoire désiré 
+             }
         }
         else {
             //TESTS

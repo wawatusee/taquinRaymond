@@ -9,5 +9,5 @@ $dirImages="images/";
 //Cette valeur sera convertie en pixels
 $sizeTaquin=400;
 $largeurMiniature="200";
-$titrePage="Taquin de Raymond";
+$titrePage="Ce taquin de Raymond";
 ?>
