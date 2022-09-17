@@ -6,11 +6,12 @@ class Img{
 		$nom = substr($nom,0,-4);
 		// On récupère les dimensions de l'image
 		$dimension=getimagesize($img);
+		$gif=false;
 		// On crée une image à partir du fichier récupéré
 		if(substr(strtolower($img),-4)==".jpg"){$image = imagecreatefromjpeg($img); }
 		else if(substr(strtolower($img),-4)==".png"){$image = imagecreatefrompng($img); }
 		else if(substr(strtolower($img),-4)==".gif"){$image = imagecreatefromgif($img); }
-		else if ( substr(strtolower($img),-5==".jpeg")) {$image = imagecreatefromjpeg($img);}
+		else if ( substr(strtolower($img),-5==".jpeg")) {$image = imagecreatefromjpeg($img);$gif=true;}
 		// L'image ne peut etre redimensionne
 		else{return false; }
 		// Création des miniatures
@@ -23,7 +24,9 @@ class Img{
 		// on modifie l'image crée en y plaçant la grande image redimensionné et décalée
 		imagecopyresampled($miniature,$image,$decalX,$decalY,0,0,$dimX,$dimY,$dimension[0],$dimension[1]);
 		// On sauvegarde le tout
-		imagejpeg($miniature,$chemin."/".$nom.".jpg",90);
+		if(!$gif){imagejpeg($miniature,$chemin."/".$nom.".jpg",90);}
+		else imagegif($miniature,$chemin."/".$nom.".gif")
+		
 		return true;
 	}
 
