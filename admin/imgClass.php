@@ -24,9 +24,7 @@ class Img{
 		// on modifie l'image crée en y plaçant la grande image redimensionné et décalée
 		imagecopyresampled($miniature,$image,$decalX,$decalY,0,0,$dimX,$dimY,$dimension[0],$dimension[1]);
 		// On sauvegarde le tout
-		if(!$gif){imagejpeg($miniature,$chemin."/".$nom.".jpg",90);}
-		else imagegif($miniature,$chemin."/".$nom.".gif")
-		
+		imagejpeg($miniature,$chemin."/".$nom.".jpg",90);
 		return true;
 	}
 
