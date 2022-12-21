@@ -6,7 +6,7 @@ $jsonImageTaquin=json_decode(file_get_contents("js/image-taquin.json"));
 //Récupération du nom de l'image source
 $nomImage=$jsonImageTaquin->image_taquin;
 $urlImage=$dirImages.$nomImage;
-header("refresh:2,index.php")
+header("refresh:4,index.php")
 ?>
 <!DOCTYPE html>
 <html lang="en">
