@@ -73,7 +73,6 @@ $largeurPiece=round($sizeTaquin/$nbrPiecesPerLine);
                                     }else echo "<option value=".$option.">".$option."</option>";
                                 }?>
                             </select>
-                            
                         </form>
                      </fieldset>
                 </div>
